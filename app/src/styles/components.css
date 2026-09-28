@@ -211,3 +211,18 @@ button.trend-card { font: inherit; color: inherit; text-align: left; width: 100%
 .metric-label { font-size: 0.75rem; text-transform: uppercase; color: #666; }
 .metric-value { font-size: 1.35rem; font-weight: 700; }
 .agent-insight { margin-bottom: 1.25rem; max-width: 48rem; }
+
+/* Phone widths: the nav (menu, two logos, page title, provenance badge,
+   "How this demo was built", page extras) was ~630-840px wide at 390px and
+   pushed every page into horizontal scroll. Let it wrap onto a second row. */
+@media (max-width: 640px) {
+  nav { height: auto; min-height: 56px; flex-wrap: wrap; row-gap: 6px; padding: 8px 12px; }
+  .nav-brand { gap: 8px; min-width: 0; }
+  .nav-divider { display: none; }
+  .qiq-logo-img { height: 20px; }
+  .client-logo, .rover-logo { height: 28px; max-width: 110px; }
+  .nav-center { order: 3; flex: 1 1 100%; text-align: left; font-size: 12px; }
+  .nav-right { flex-wrap: wrap; gap: 6px; justify-content: flex-end; min-width: 0; }
+  .nav-live { display: none; }
+  .nav-right select { max-width: 100%; }
+}

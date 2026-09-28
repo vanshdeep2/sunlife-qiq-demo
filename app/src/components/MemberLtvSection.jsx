@@ -10,6 +10,7 @@ import {
 import { fmtDonutCentre, fmtMoneyK, fmtMoneyWhole } from '../utils/format'
 import { IS_TWO_SIDED, NOUNS_CAP } from '../config/brand'
 import { LTV_LABELS } from '../utils/ltvLabels'
+import ProvenanceBadge from './ProvenanceBadge'
 
 const AT_RISK_DONUT_COLORS = AT_RISK_LINES.map((line) => line.dotColor)
 const COACHING_DONUT_COLORS = COACHING_VALUE_LINES.map((line) => line.dotColor)
@@ -57,7 +58,9 @@ export default function MemberLtvSection({ ltv, onOpenSettings }) {
 
   return (
     <>
-      <div className="connector">{LTV_SECTION_TITLE}</div>
+      <div className="connector">
+        {LTV_SECTION_TITLE} <ProvenanceBadge kind="mixed" />
+      </div>
       <div className="ltv-section-head">
         <p className="section-sublabel ltv-section-sublabel">
           {marketplaceLabel} {fmtUnitValue(ltv.demandSideLtv)}

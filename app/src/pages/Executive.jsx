@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Nav from '../components/Nav'
+import ProvenanceBadge from '../components/ProvenanceBadge'
 import FlowBar from '../components/FlowBar'
 import KPITile from '../components/KPITile'
 import NBACard from '../components/NBACard'
@@ -561,8 +562,25 @@ export default function Executive() {
           {PERIOD_LABEL}. {HERO_CONTENT.subtitleSuffix}
         </div>
         <p className="extract-note">{EXTRACT_NOTE}</p>
+        <div className="prov-legend" role="note" aria-label="Legend: type of data used">
+          <span className="prov-legend-label">Legend · type of data used on this page</span>
+          <span className="prov-legend-item">
+            <ProvenanceBadge kind="public" /> real, sourced data
+          </span>
+          <span className="prov-legend-item">
+            <ProvenanceBadge kind="modelled" /> synthetic demo data
+          </span>
+          <span className="prov-legend-item">
+            <ProvenanceBadge kind="mixed" /> real anchor, modelled figures
+          </span>
+          <Link to="/voc" className="prov-link">
+            See all public evidence →
+          </Link>
+        </div>
 
-        <div className="connector">This period - at a glance.</div>
+        <div className="connector">
+          This period - at a glance. <ProvenanceBadge kind="mixed" />
+        </div>
         <div className="hero">
           <div className="hero-left">
             <div className="hero-eyebrow">{HERO_CONTENT.eyebrow}</div>
@@ -651,7 +669,7 @@ export default function Executive() {
         </div>
 
         <div className="connector" style={{ marginBottom: 0 }}>
-          <span>Operations Snapshot · Week 5</span>
+          <span>Operations Snapshot · Week 5</span> <ProvenanceBadge kind="modelled" />
         </div>
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
           <button
@@ -806,7 +824,9 @@ export default function Executive() {
 
         <MemberLtvSection ltv={ltv} onOpenSettings={() => setSettingsOpen(true)} />
 
-        <div className="connector">What is driving this.</div>
+        <div className="connector">
+          What is driving this. <ProvenanceBadge kind="modelled" />
+        </div>
         <p className="connector-sub">
           The hardest matrix cell, process followed and resolved but CSAT still low, is{' '}
           {fmtNum(matrixHeadline.contacts)} contacts and {matrixHeadline.continuationShareOfCellPct}%
@@ -885,7 +905,9 @@ export default function Executive() {
           </div>
         </div>
 
-        <div className="connector">Internal and external signal, together.</div>
+        <div className="connector">
+          Internal and external signal, together. <ProvenanceBadge kind="mixed" />
+        </div>
         <p className="connector-sub">
           {EXTERNAL_VOC.platform} rates {BRAND.name} {EXTERNAL_VOC.label} at {EXTERNAL_VOC.rating}/
           {EXTERNAL_VOC.ratingScale} across {fmtNum(EXTERNAL_VOC.reviewCount)} reviews. Overall QA is{' '}
@@ -912,7 +934,9 @@ export default function Executive() {
 
         <div className="voc-strip-exec">
           <div className="voc-strip-exec-card">
-            <div className="voc-strip-exec-title">Internal VOC signal</div>
+            <div className="voc-strip-exec-title">
+              Internal VOC signal <ProvenanceBadge kind="modelled" />
+            </div>
             {INTERNAL_VOC_STRIP.slice(0, 3).map((item) => (
               <button
                 key={item.id}
@@ -926,7 +950,12 @@ export default function Executive() {
             ))}
           </div>
           <div className="voc-strip-exec-card">
-            <div className="voc-strip-exec-title">External VOC signal</div>
+            <div className="voc-strip-exec-title">
+              External VOC signal <ProvenanceBadge kind="public" />{' '}
+              <Link to="/voc" className="prov-link">
+                All public evidence →
+              </Link>
+            </div>
             {EXTERNAL_VOC_STRIP.slice(0, 3).map((item) => (
               <button
                 key={item.id}
@@ -941,7 +970,9 @@ export default function Executive() {
           </div>
         </div>
 
-        <div className="connector">Actions.</div>
+        <div className="connector">
+          Actions. <ProvenanceBadge kind="mixed" />
+        </div>
         <div className="bottom-row">
           {ACTION_BOARD_COLUMNS.map((column) => {
             const entries = ACTION_ENTRIES.filter(([, a]) => a.category === column)

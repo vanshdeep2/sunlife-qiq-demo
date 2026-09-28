@@ -5,6 +5,7 @@ import OperationsOverview from './pages/OperationsOverview'
 import Agent from './pages/Agent'
 import ContactSearch from './pages/ContactSearch'
 import QualityAnalysis from './pages/QualityAnalysis'
+import VoiceOfCustomer from './pages/VoiceOfCustomer'
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Executive />} />
+          <Route path="/voc" element={<VoiceOfCustomer />} />
           <Route path="/quality" element={<QualityAnalysis />} />
           <Route path="/operations" element={<OperationsOverview />} />
           <Route path="/teamlead" element={<Navigate to="/operations" replace />} />
