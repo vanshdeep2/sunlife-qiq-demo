@@ -257,7 +257,7 @@ function DriverSummary({ row }) {
       <p className="insight-modal-text">
         No level-2 breakdown is published for this category — the story spec decomposes
         only the drivers where a sub-driver split is evidenced, rather than inventing
-        one. Contact-level detail for this category is available in Contact Search.
+        one. Contact-level detail for this category is available in Contact Evidence.
       </p>
     </>
   )
@@ -830,7 +830,7 @@ export default function Executive() {
         <p className="connector-sub">
           The hardest matrix cell, process followed and resolved but CSAT still low, is{' '}
           {fmtNum(matrixHeadline.contacts)} contacts and {matrixHeadline.continuationShareOfCellPct}%
-          of it is continuation contacts. Full detail lives in Contact Search.
+          of it is continuation contacts. Full detail lives in Contact Evidence.
         </p>
         <div className="driving-panel">
           <div className="driving-tab-bar">

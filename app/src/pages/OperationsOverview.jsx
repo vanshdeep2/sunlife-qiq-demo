@@ -149,7 +149,7 @@ export default function OperationsOverview() {
       <Nav currentPage="operations" liveLabel={LIVE_LABEL} callsPill={CALLS_PILL} />
       <div className="page">
         <div className="briefing-kicker">QiQ Operations Intelligence</div>
-        <h1 className="briefing-title">Operations Overview</h1>
+        <h1 className="briefing-title">Operations Director</h1>
         <div className="briefing-subtitle">
           5-week performance trends · Micro Coaching impact · Agent matrix · Coaching queue
         </div>
@@ -361,7 +361,7 @@ export default function OperationsOverview() {
         <section id="flagged-calls">
           <div className="connector">Contacts QiQ Wants You to Review</div>
           <p className="section-sublabel">
-            Flagged continuation contacts · Click any row to open in Contact Search
+            Flagged continuation contacts · Click any row to open in Contact Evidence
           </p>
           <LedgerTable
             tableClassName="flagged-table"

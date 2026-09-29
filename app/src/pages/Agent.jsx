@@ -107,7 +107,7 @@ export default function Agent() {
         }}
       >
         <option value="agent">Agent</option>
-        <option value="operations">Operations Overview</option>
+        <option value="operations">Operations Director</option>
       </select>
     </label>
   )
@@ -120,7 +120,7 @@ export default function Agent() {
           <div className="agent-header-toolbar">
             {isTlMode ? (
               <Link to="/operations" className="back-btn">
-                ← Back to Operations Overview
+                ← Back to Operations Director
               </Link>
             ) : (
               <div className="agent-select-wrap">

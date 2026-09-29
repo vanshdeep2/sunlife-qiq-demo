@@ -209,7 +209,7 @@ export const FRUSTRATION_KEYWORDS = [
 ]
 
 /**
- * One-line definitions under the Quality Overview metric cards.
+ * One-line definitions under the Quality Diagnostics metric cards.
  *
  * "Call Resolution Rate" here is the share of contacts resolved *eventually*.
  * Executive's "First contact resolution" KPI is the share resolved on the

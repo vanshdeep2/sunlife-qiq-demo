@@ -14,7 +14,7 @@ import { AGENT_METRICS, AGENT_METRIC_ORDER } from './agentMetrics'
 export const LIVE_LABEL = 'Live · 5-week window'
 export const CALLS_PILL = '80,000 contacts analysed'
 export const EXTRACT_NOTE =
-  'Contact Search carries a 3,007-record working extract of the 80,000-contact population.'
+  'Contact Evidence carries a 3,007-record working extract of the 80,000-contact population.'
 
 export const PERIOD_LABEL = '24 Aug - 27 Sep 2026'
 export const WK_LABELS = ['24-30 Aug', '31 Aug-6 Sep', '7-13 Sep', '14-20 Sep', '21-27 Sep']

@@ -198,7 +198,7 @@ export default function ContactSearch() {
       <Nav currentPage="search" liveLabel={LIVE_LABEL} callsPill={CALLS_PILL} />
       <div className="page">
         <div className="briefing-kicker">QiQ Contact Intelligence</div>
-        <h1 className="briefing-title">Contact Search</h1>
+        <h1 className="briefing-title">Contact Evidence</h1>
         <div className="briefing-subtitle">
           QA analysts and team leaders ·{' '}
           {POPULATION.estimatedPopulation.toLocaleString(NOUNS.locale)} contacts analysed ·{' '}

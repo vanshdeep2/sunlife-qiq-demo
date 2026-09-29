@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BRAND } from '../config/brand'
+import { PAGES, MENU_ORDER } from '../config/pages'
 import ProvenanceBadge from './ProvenanceBadge'
 import MethodologyDrawer from './MethodologyDrawer'
 import '../styles/components.css'
@@ -8,14 +9,7 @@ import '../styles/components.css'
 /** Where each page's numbers come from (see ProvenanceBadge). */
 const PAGE_PROVENANCE = { executive: 'mixed', voc: 'public' }
 
-const MENU_ITEMS = [
-  { page: 'executive', path: '/', title: 'Executive', sub: 'KPIs, matrix, first vs continuation' },
-  { page: 'voc', path: '/voc', title: 'Voice of the Customer', sub: 'Public reviews, ratings and news, all real and linked' },
-  { page: 'quality', path: '/quality', title: 'Quality Overview', sub: 'Diagnostic matrix, critical failures' },
-  { page: 'operations', path: '/operations', title: 'Operations Overview', sub: 'Trends, agent matrix, coaching queue' },
-  { page: 'agent', path: '/agent', title: 'Agent', sub: 'Micro Coaching and notes' },
-  { page: 'search', path: '/search', title: 'Contact Search', sub: 'Transcripts, Incident Trail, QA' },
-]
+const MENU_ITEMS = MENU_ORDER.map((page) => ({ page, ...PAGES[page] }))
 
 export default function Nav({ currentPage, liveLabel, callsPill, pageTitle, navExtra }) {
   const [menuOpen, setMenuOpen] = useState(false)

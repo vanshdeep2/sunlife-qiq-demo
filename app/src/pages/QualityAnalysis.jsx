@@ -197,7 +197,7 @@ export default function QualityAnalysis() {
       <Nav currentPage="quality" liveLabel={LIVE_LABEL} callsPill={CALLS_PILL} />
       <div className="page">
         <div className="qa-page-header">
-          <h1 className="qa-page-title">Quality Overview</h1>
+          <h1 className="qa-page-title">Quality Diagnostics</h1>
           <div className="qa-page-controls">
             <label
               htmlFor="qa-week-select"
